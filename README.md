@@ -1,4 +1,4 @@
-# lumen-angular-code-generator
+# lumen-generator
 
 !! WORK IN PROGRESS > ANGULAR GENERATOR !!
 
