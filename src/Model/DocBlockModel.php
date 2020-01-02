@@ -1,12 +1,12 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\RenderableModel;
+use rusty\lumenGenerator\RenderableModel;
 
 /**
  * Class DocBlockModel
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class DocBlockModel extends RenderableModel
 {

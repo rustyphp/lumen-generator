@@ -1,20 +1,20 @@
 # lumen-generator
 
-!! WORK IN PROGRESS > ANGULAR GENERATOR !!
+!! WORK IN PROGRESS > ANGULAR/VUE GENERATOR !!
 
-Model, controller provider and service generator for lumen 5.6 and angular 6/vue2 from DB schema.
+Model, controller provider and service generator for lumen 6.x and angular 6/vue2 from DB schema.
 
 ## Installation
 
 Use composer to install it in your lumen project.
 
-`composer require biliboobrian/lumen-angular-code-generator`
+`composer require rustyphp/lumen-generator`
 
 Modify your bootstrap/app.php providers to add generators to Artisan.
 
 
 ```php
-$app->register(biliboobrian\lumenAngularCodeGenerator\Provider\GeneratorServiceProvider::class);
+$app->register(rusty\lumenGenerator\Provider\GeneratorServiceProvider::class);
 ```
 ## Usage
 ### Scaffolding from DB
@@ -24,10 +24,10 @@ You need a database connection setup in your project.
 Build CRUD models and controllers with various commands (List of available commands will be updated with development progress):
 
 ```shell
-  bilibo:lumen:ctrl      Generate CRUD controller for a table name.
-  bilibo:lumen:ctrls     Generate CRUD controllers for all tables.
-  bilibo:lumen:model     Generate Eloquent model according to table passed in argument.
-  bilibo:lumen:models    Generate Eloquent models for all tables.
+  lumen:ctrl      Generate CRUD controller for a table name.
+  lumen:ctrls     Generate CRUD controllers for all tables.
+  lumen:model     Generate Eloquent model according to table passed in argument.
+  lumen:models    Generate Eloquent models for all tables.
 ```
 
 Default configuration is the following ( you can override them with -c option in command line to provide another config.php file):
@@ -35,8 +35,8 @@ Default configuration is the following ( you can override them with -c option in
 ```php
     'lumen_model_namespace'       	=> 'App\Models',
     'lumen_ctrl_namespace'       	=> 'App\Http\Controllers',
-    'base_class_lumen_model_name' 	=> \biliboobrian\lumenAngularCodeGenerator\Model\MicroServiceExtendModel::class,
-    'base_class_lumen_ctrl_name' 	=> \biliboobrian\lumenAngularCodeGenerator\Controller\CrudExtendController::class,
+    'base_class_lumen_model_name' 	=> \rusty\lumenGenerator\Model\MicroServiceExtendModel::class,
+    'base_class_lumen_ctrl_name' 	=> \rusty\lumenGenerator\Controller\CrudExtendController::class,
     'lumen_model_output_path'     	=> app_path() . '/Models',
     'lumen_ctrl_output_path'      	=> app_path() . '/Http/Controllers',
     'no_timestamps'   				=> null,
@@ -49,7 +49,7 @@ Default configuration is the following ( you can override them with -c option in
 Use command help for more infos
 
 ```shell
-$ php artisan bilibo:lumen:ctrl -h
+$ php artisan lumen:ctrl -h
 ```
 Generation of controllers and models extend lushdigital/microservice-crud.
 
@@ -74,7 +74,7 @@ $router->put(   '/model/{id}',            'ModelController@update');
 $router->delete('/model/{id}',            'ModelController@destroy');
 ```
 
-You can add all routes to your web.php using -a option in the bilibo:lumen:ctrls command.
+You can add all routes to your web.php using -a option in the lumen:ctrls command.
 
 
 ## License

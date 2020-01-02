@@ -1,16 +1,16 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\AccessModifierTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\DocBlockTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\StaticModifierTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\ValueTrait;
+use rusty\lumenGenerator\Model\Traits\AccessModifierTrait;
+use rusty\lumenGenerator\Model\Traits\DocBlockTrait;
+use rusty\lumenGenerator\Model\Traits\StaticModifierTrait;
+use rusty\lumenGenerator\Model\Traits\ValueTrait;
 
 /**
 
  * Class PHPClassProperty
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class PropertyModel extends BasePropertyModel
 {

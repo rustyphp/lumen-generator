@@ -1,12 +1,12 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\Config;
+use rusty\lumenGenerator\Config;
 
 /**
  * Class Relation
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 abstract class Relation
 {

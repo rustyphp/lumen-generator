@@ -1,22 +1,22 @@
 {
     "name": "rustyphp/lumen-generator",
-    "description": "Model, controller, provider and service generator for Lumen 5.6 and Angular 6 from DB schema",
-    "keywords": ["code generator", "scaffolding", "lumen", "angular", "model", "controller", "service", "provider"],
+    "description": "Model, controller, provider and service generator for Lumen 6.x and Angular 6(Vue 2) from DB schema",
+    "keywords": ["code generator", "scaffolding", "lumen", "angular","vue2", "model", "controller", "service", "provider"],
     "license": "MIT",
     "autoload": {
       "psr-4": {
-        "biliboobrian\\lumenAngularCodeGenerator\\": "src/"
+        "rusty\\lumenGenerator\\": "src/"
       }
     },
     "require": {
       "doctrine/dbal": "^2.5",
       "biliboobrian/microservice-crud": "^3.0",
-      "laravel/lumen-framework": "5.* || 6.*"
+      "laravel/lumen-framework": "6.*"
     },
     "authors": [{ 
         "name": "biliboobrian", 
         "email": "biliboobrian@yahoo.fr"
     }],
-    "version": "1.0.31",
+    "version": "0.0.1",
     "minimum-stability": "dev"
   }

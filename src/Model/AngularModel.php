@@ -1,26 +1,26 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
 use Illuminate\Support\Str;
-use biliboobrian\lumenAngularCodeGenerator\Helper\ClassHelper;
-use biliboobrian\lumenAngularCodeGenerator\Helper\TitleHelper;
-use biliboobrian\lumenAngularCodeGenerator\Model\ClassModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\MethodModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\DocBlockModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\PropertyModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\ClassNameModel;
+use rusty\lumenGenerator\Helper\ClassHelper;
+use rusty\lumenGenerator\Helper\TitleHelper;
+use rusty\lumenGenerator\Model\ClassModel;
+use rusty\lumenGenerator\Model\MethodModel;
+use rusty\lumenGenerator\Model\DocBlockModel;
+use rusty\lumenGenerator\Model\PropertyModel;
+use rusty\lumenGenerator\Model\ClassNameModel;
 use Illuminate\Database\Eloquent\Relations\HasOne as EloquentHasOne;
-use biliboobrian\lumenAngularCodeGenerator\Model\ImportClassModel;
+use rusty\lumenGenerator\Model\ImportClassModel;
 use Illuminate\Database\Eloquent\Relations\HasMany as EloquentHasMany;
-use biliboobrian\lumenAngularCodeGenerator\Exception\GeneratorException;
-use biliboobrian\lumenAngularCodeGenerator\Model\VirtualPropertyModel;
+use rusty\lumenGenerator\Exception\GeneratorException;
+use rusty\lumenGenerator\Model\VirtualPropertyModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo as EloquentBelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany as EloquentBelongsToMany;
 
 /**
  * Class AngularModel
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class AngularModel extends ClassModel
 {

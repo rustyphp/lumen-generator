@@ -1,23 +1,23 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Command;
+namespace rusty\lumenGenerator\Command;
 
 use Illuminate\Console\Command;
-use biliboobrian\lumenAngularCodeGenerator\Config;
-use biliboobrian\lumenAngularCodeGenerator\Generator;
+use rusty\lumenGenerator\Config;
+use rusty\lumenGenerator\Generator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Class GenerateLumenControllerCommand
- * @package biliboobrian\lumenAngularCodeGenerator\Command
+ * @package rusty\lumenGenerator\Command
  */
 class GenerateLumenBulkControllerCommand extends Command
 {
     /**
      * @var string
      */
-    protected $name = 'bilibo:lumen:bulkCtrl';
+    protected $name = 'lumen:bulkCtrl';
 
 /**
      * @var string

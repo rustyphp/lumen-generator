@@ -1,10 +1,10 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
 /**
  * Class BelongsToMany
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class BelongsToMany extends Relation
 {

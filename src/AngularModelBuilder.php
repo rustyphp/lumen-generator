@@ -1,24 +1,24 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator;
+namespace rusty\lumenGenerator;
 
 use Doctrine\DBAL\Schema\Table;
 use Illuminate\Database\DatabaseManager;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
-use biliboobrian\lumenAngularCodeGenerator\Model\HasOne;
-use biliboobrian\lumenAngularCodeGenerator\Model\HasMany;
-use biliboobrian\lumenAngularCodeGenerator\Model\BelongsTo;
-use biliboobrian\lumenAngularCodeGenerator\Model\ClassModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\MethodModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\AngularModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\ArgumentModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\BelongsToMany;
-use biliboobrian\lumenAngularCodeGenerator\Model\DocBlockModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\PropertyModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\NamespaceModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\ImportClassModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\VirtualPropertyModel;
-use biliboobrian\lumenAngularCodeGenerator\Exception\GeneratorException;
+use rusty\lumenGenerator\Model\HasOne;
+use rusty\lumenGenerator\Model\HasMany;
+use rusty\lumenGenerator\Model\BelongsTo;
+use rusty\lumenGenerator\Model\ClassModel;
+use rusty\lumenGenerator\Model\MethodModel;
+use rusty\lumenGenerator\Model\AngularModel;
+use rusty\lumenGenerator\Model\ArgumentModel;
+use rusty\lumenGenerator\Model\BelongsToMany;
+use rusty\lumenGenerator\Model\DocBlockModel;
+use rusty\lumenGenerator\Model\PropertyModel;
+use rusty\lumenGenerator\Model\NamespaceModel;
+use rusty\lumenGenerator\Model\ImportClassModel;
+use rusty\lumenGenerator\Model\VirtualPropertyModel;
+use rusty\lumenGenerator\Exception\GeneratorException;
 
 class AngularModelBuilder
 {

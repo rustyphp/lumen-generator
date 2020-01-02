@@ -1,10 +1,10 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Exception;
+namespace rusty\lumenGenerator\Exception;
 
 /**
  * Class ValidationException
- * @package biliboobrian\lumenAngularCodeGenerator\Exception
+ * @package rusty\lumenGenerator\Exception
  */
 class ValidationException extends \Exception
 {

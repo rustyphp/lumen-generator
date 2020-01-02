@@ -1,22 +1,22 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Command;
+namespace rusty\lumenGenerator\Command;
 
 use Illuminate\Console\Command;
-use biliboobrian\lumenAngularCodeGenerator\Config;
-use biliboobrian\lumenAngularCodeGenerator\Generator;
+use rusty\lumenGenerator\Config;
+use rusty\lumenGenerator\Generator;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Class GenerateLumenControllerCommand
- * @package biliboobrian\lumenAngularCodeGenerator\Command
+ * @package rusty\lumenGenerator\Command
  */
 class GenerateLumenSwaggerInfoCommand extends Command
 {
     /**
      * @var string
      */
-    protected $name = 'bilibo:lumen:swagger';
+    protected $name = 'lumen:swagger';
 
 /**
      * @var string

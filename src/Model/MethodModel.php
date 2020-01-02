@@ -1,17 +1,17 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\Exception\ValidationException;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\AbstractModifierTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\AccessModifierTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\DocBlockTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\FinalModifierTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\StaticModifierTrait;
+use rusty\lumenGenerator\Exception\ValidationException;
+use rusty\lumenGenerator\Model\Traits\AbstractModifierTrait;
+use rusty\lumenGenerator\Model\Traits\AccessModifierTrait;
+use rusty\lumenGenerator\Model\Traits\DocBlockTrait;
+use rusty\lumenGenerator\Model\Traits\FinalModifierTrait;
+use rusty\lumenGenerator\Model\Traits\StaticModifierTrait;
 
 /**
  * Class PHPClassMethod
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class MethodModel extends BaseMethodModel
 {

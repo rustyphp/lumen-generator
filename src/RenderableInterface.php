@@ -1,10 +1,10 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator;
+namespace rusty\lumenGenerator;
 
 /**
  * Interface RenderableInterface
- * @package biliboobrian\lumenAngularCodeGenerator
+ * @package rusty\lumenGenerator
  */
 interface RenderableInterface
 {

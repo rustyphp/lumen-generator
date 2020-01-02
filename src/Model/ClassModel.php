@@ -1,14 +1,14 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\Exception\GeneratorException;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\DocBlockTrait;
-use biliboobrian\lumenAngularCodeGenerator\RenderableModel;
+use rusty\lumenGenerator\Exception\GeneratorException;
+use rusty\lumenGenerator\Model\Traits\DocBlockTrait;
+use rusty\lumenGenerator\RenderableModel;
 
 /**
  * Class ClassModel
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class ClassModel extends RenderableModel
 {

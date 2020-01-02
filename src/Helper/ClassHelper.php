@@ -1,10 +1,10 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Helper;
+namespace rusty\lumenGenerator\Helper;
 
 /**
  * Class ClassHelper
- * @package biliboobrian\lumenAngularCodeGenerator\Helper
+ * @package rusty\lumenGenerator\Helper
  */
 class ClassHelper
 {

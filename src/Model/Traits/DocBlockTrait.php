@@ -1,12 +1,12 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model\Traits;
+namespace rusty\lumenGenerator\Model\Traits;
 
-use biliboobrian\lumenAngularCodeGenerator\Model\DocBlockModel;
+use rusty\lumenGenerator\Model\DocBlockModel;
 
 /**
  * Trait DocBlockTrait
- * @package biliboobrian\lumenAngularCodeGenerator\Model\Traits
+ * @package rusty\lumenGenerator\Model\Traits
  */
 trait DocBlockTrait
 {

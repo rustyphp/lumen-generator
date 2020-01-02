@@ -1,12 +1,12 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator;
+namespace rusty\lumenGenerator;
 
-use biliboobrian\lumenAngularCodeGenerator\Exception\GeneratorException;
+use rusty\lumenGenerator\Exception\GeneratorException;
 
 /**
  * Class RenderableModel
- * @package biliboobrian\lumenAngularCodeGenerator
+ * @package rusty\lumenGenerator
  */
 abstract class RenderableModel implements RenderableInterface, LineableInterface
 {

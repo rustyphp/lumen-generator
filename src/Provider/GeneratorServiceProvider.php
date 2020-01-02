@@ -1,21 +1,21 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Provider;
+namespace rusty\lumenGenerator\Provider;
 
 use Illuminate\Support\ServiceProvider;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateLumenModelCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateLumenModelsCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateLumenControllerCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateLumenControllersCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateLumenBulkControllerCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateLumenRoutesCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateAngularModelCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateAngularModelsCommand;
-use biliboobrian\lumenAngularCodeGenerator\Command\GenerateLumenSwaggerInfoCommand;
+use rusty\lumenGenerator\Command\GenerateLumenModelCommand;
+use rusty\lumenGenerator\Command\GenerateLumenModelsCommand;
+use rusty\lumenGenerator\Command\GenerateLumenControllerCommand;
+use rusty\lumenGenerator\Command\GenerateLumenControllersCommand;
+use rusty\lumenGenerator\Command\GenerateLumenBulkControllerCommand;
+use rusty\lumenGenerator\Command\GenerateLumenRoutesCommand;
+use rusty\lumenGenerator\Command\GenerateAngularModelCommand;
+use rusty\lumenGenerator\Command\GenerateAngularModelsCommand;
+use rusty\lumenGenerator\Command\GenerateLumenSwaggerInfoCommand;
 
 /**
  * Class GeneratorServiceProvider
- * @package biliboobrian\lumenAngularCodeGenerator\Provider
+ * @package rusty\lumenGenerator\Provider
  */
 class GeneratorServiceProvider extends ServiceProvider
 {

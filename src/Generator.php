@@ -1,10 +1,10 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator;
+namespace rusty\lumenGenerator;
 
-use biliboobrian\lumenAngularCodeGenerator\Model\ClassModel;
-use biliboobrian\lumenAngularCodeGenerator\ControllerBuilder;
-use biliboobrian\lumenAngularCodeGenerator\Exception\GeneratorException;
+use rusty\lumenGenerator\Model\ClassModel;
+use rusty\lumenGenerator\ControllerBuilder;
+use rusty\lumenGenerator\Exception\GeneratorException;
 
 /**
  * Class Generator

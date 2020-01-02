@@ -1,13 +1,13 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\ValueTrait;
-use biliboobrian\lumenAngularCodeGenerator\RenderableModel;
+use rusty\lumenGenerator\Model\Traits\ValueTrait;
+use rusty\lumenGenerator\RenderableModel;
 
 /**
  * Class PHPClassConstant
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class ConstantModel extends RenderableModel
 {

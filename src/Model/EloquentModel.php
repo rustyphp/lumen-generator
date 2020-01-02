@@ -1,26 +1,26 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo as EloquentBelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany as EloquentBelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany as EloquentHasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne as EloquentHasOne;
 use Illuminate\Support\Str;
-use biliboobrian\lumenAngularCodeGenerator\Model\ClassModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\ClassNameModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\DocBlockModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\MethodModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\PropertyModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\UseClassModel;
-use biliboobrian\lumenAngularCodeGenerator\Model\VirtualPropertyModel;
-use biliboobrian\lumenAngularCodeGenerator\Exception\GeneratorException;
-use biliboobrian\lumenAngularCodeGenerator\Helper\ClassHelper;
-use biliboobrian\lumenAngularCodeGenerator\Helper\TitleHelper;
+use rusty\lumenGenerator\Model\ClassModel;
+use rusty\lumenGenerator\Model\ClassNameModel;
+use rusty\lumenGenerator\Model\DocBlockModel;
+use rusty\lumenGenerator\Model\MethodModel;
+use rusty\lumenGenerator\Model\PropertyModel;
+use rusty\lumenGenerator\Model\UseClassModel;
+use rusty\lumenGenerator\Model\VirtualPropertyModel;
+use rusty\lumenGenerator\Exception\GeneratorException;
+use rusty\lumenGenerator\Helper\ClassHelper;
+use rusty\lumenGenerator\Helper\TitleHelper;
 
 /**
  * Class EloquentModel
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class EloquentModel extends ClassModel
 {

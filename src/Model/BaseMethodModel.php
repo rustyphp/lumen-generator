@@ -1,12 +1,12 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\RenderableModel;
+use rusty\lumenGenerator\RenderableModel;
 
 /**
  * Class BaseMethodModel
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 abstract class BaseMethodModel extends RenderableModel
 {

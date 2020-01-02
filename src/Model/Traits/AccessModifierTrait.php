@@ -1,10 +1,10 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model\Traits;
+namespace rusty\lumenGenerator\Model\Traits;
 
 /**
  * Trait AccessModifierTrait
- * @package biliboobrian\lumenAngularCodeGenerator\Model\Traits
+ * @package rusty\lumenGenerator\Model\Traits
  */
 trait AccessModifierTrait
 {

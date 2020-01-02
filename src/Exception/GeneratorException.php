@@ -1,10 +1,10 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Exception;
+namespace rusty\lumenGenerator\Exception;
 
 /**
  * Class GeneratorException
- * @package biliboobrian\lumenAngularCodeGenerator\Exception
+ * @package rusty\lumenGenerator\Exception
  */
 class GeneratorException extends \Exception
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Model;
+namespace rusty\lumenGenerator\Model;
 
-use biliboobrian\lumenAngularCodeGenerator\Exception\ValidationException;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\AbstractModifierTrait;
-use biliboobrian\lumenAngularCodeGenerator\Model\Traits\FinalModifierTrait;
-use biliboobrian\lumenAngularCodeGenerator\RenderableModel;
+use rusty\lumenGenerator\Exception\ValidationException;
+use rusty\lumenGenerator\Model\Traits\AbstractModifierTrait;
+use rusty\lumenGenerator\Model\Traits\FinalModifierTrait;
+use rusty\lumenGenerator\RenderableModel;
 
 /**
  * Class Name
- * @package biliboobrian\lumenAngularCodeGenerator\Model
+ * @package rusty\lumenGenerator\Model
  */
 class ClassNameModel extends RenderableModel
 {

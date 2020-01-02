@@ -1,23 +1,23 @@
 <?php
 
-namespace biliboobrian\lumenAngularCodeGenerator\Command;
+namespace rusty\lumenGenerator\Command;
 
 use Illuminate\Console\Command;
-use biliboobrian\lumenAngularCodeGenerator\Config;
-use biliboobrian\lumenAngularCodeGenerator\AngularGenerator;
+use rusty\lumenGenerator\Config;
+use rusty\lumenGenerator\AngularGenerator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Class GenerateAngularModelsCommand
- * @package biliboobrian\lumenAngularCodeGenerator\Command
+ * @package rusty\lumenGenerator\Command
  */
 class GenerateAngularModelsCommand extends Command
 {
     /**
      * @var string
      */
-    protected $name = 'bilibo:angular:models';
+    protected $name = 'angular:models';
 
 /**
      * @var string
