@@ -1,5 +1,5 @@
 {
-    "name": "biliboobrian/lumen-angular-code-generator",
+    "name": "rustyphp/lumen-generator",
     "description": "Model, controller, provider and service generator for Lumen 5.6 and Angular 6 from DB schema",
     "keywords": ["code generator", "scaffolding", "lumen", "angular", "model", "controller", "service", "provider"],
     "license": "MIT",
