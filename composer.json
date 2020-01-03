@@ -10,8 +10,8 @@
     },
     "require": {
       "doctrine/dbal": "^2.5",
-      "biliboobrian/microservice-crud": "^3.0",
-      "laravel/lumen-framework": "6.*"
+      "laravel/lumen-framework": "6.*",
+      "rustyphp/microservice-crud": "^3.0.3"
     },
     "authors": [{ 
         "name": "biliboobrian", 

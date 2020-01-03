@@ -1,222 +1,204 @@
 <?php
-
 namespace rusty\lumenGenerator;
 
-use rusty\lumenGenerator\Model\ClassModel;
-use rusty\lumenGenerator\ControllerBuilder;
 use rusty\lumenGenerator\Exception\GeneratorException;
+use rusty\lumenGenerator\Model\ClassModel;
 
 /**
  * Class Generator
+ *
  * @package Krlove\Generator
  */
-class Generator
-{
+class Generator {
     /**
      * @var SwaggerBuilder
      */
     protected $swaggerBuilder;
-
-    
     /**
      * @var EloquentModelBuilder
      */
     protected $modelBuilder;
-
     /**
      * @var ControllerBuilder
      */
     protected $ctrlBuilder;
-
-
-    private $routes = [
-        ['get',     '/%s',                                  '%sController@get'],
-        ['get',     '/%s/index',                            '%sController@index'],
-        ['get',     '/%s/{id}',                             '%sController@getById'],
-        ['get',     '/%s/{id}/{relation}',                  '%sController@getRelation'],
-        ['post',    '/%s',                                  '%sController@store'],
-        ['post',    '/%s/{id}/{relation}',                  '%sController@createRelationWithObject'],
-        ['post',    '/%s/{id}/{relation}/{idRelation}',     '%sController@createRelation'],
-        ['put',     '/%s/{id}',                             '%sController@update'],
-        ['delete',  '/%s/{id}',                             '%sController@destroy'],
-        ['delete',  '/%s/{id}/{relation}',                  '%sController@emptyRelation'],
-        ['delete',  '/%s/{id}/{relation}/{idRelation}',     '%sController@deleteRelation']
+    private $routes=[
+        ['get', '/%s', '%sController@get'],
+        ['get', '/%s/index', '%sController@index'],
+        ['get', '/%s/{id}', '%sController@getById'],
+        ['get', '/%s/{id}/{relation}', '%sController@getRelation'],
+        ['post', '/%s', '%sController@store'],
+        ['post', '/%s/{id}/{relation}', '%sController@createRelationWithObject'],
+        ['post', '/%s/{id}/{relation}/{idRelation}', '%sController@createRelation'],
+        ['put', '/%s/{id}', '%sController@update'],
+        ['delete', '/%s/{id}', '%sController@destroy'],
+        ['delete', '/%s/{id}/{relation}', '%sController@emptyRelation'],
+        ['delete', '/%s/{id}/{relation}/{idRelation}', '%sController@deleteRelation']
     ];
 
     /**
      * Generator constructor.
+     *
      * @param EloquentModelBuilder $ModelBuilder
      */
-    public function __construct(
-        EloquentModelBuilder $modelBuilder, 
-        ControllerBuilder $ctrlBuilder,
-        SwaggerBuilder $swaggerBuilder
-    ) {
-        $this->modelBuilder = $modelBuilder;
-        $this->ctrlBuilder = $ctrlBuilder;
-        $this->swaggerBuilder = $swaggerBuilder;
+    public function __construct(EloquentModelBuilder $modelBuilder, ControllerBuilder $ctrlBuilder,
+        SwaggerBuilder $swaggerBuilder) {
+        $this->modelBuilder=$modelBuilder;
+        $this->ctrlBuilder=$ctrlBuilder;
+        $this->swaggerBuilder=$swaggerBuilder;
     }
-    
 
-    public function getTableList(){
+    /**
+     * @return \Doctrine\DBAL\Schema\Table[]
+     */
+    public function getTableList() {
         return $this->modelBuilder->getTableList();
     }
 
+    /**
+     * @param $table
+     *
+     * @return mixed
+     */
     public function generateModelName($table) {
         return str_replace('_', '', ucwords(ucfirst($table), "_"));
     }
 
     /**
      * @param Config $config
+     *
      * @return ClassModel
      * @throws GeneratorException
      */
-    public function generateModel(Config $config)
-    {
-        $model   = $this->modelBuilder->createModel($config);
-        $content = $model->render();
-
-        $outputPath = $this->resolveModelOutputPath($config);
+    public function generateModel(Config $config) {
+        $model=$this->modelBuilder->createModel($config);
+        $content=$model->render();
+        $outputPath=$this->resolveModelOutputPath($config);
         file_put_contents($outputPath, $content);
-
         return $model;
     }
 
     /**
      * @param Config $config
+     *
      * @return ClassModel
      * @throws GeneratorException
      */
-    public function generateController(Config $config)
-    {
-        $ctrl   = $this->ctrlBuilder->createController($config);
-        $content = $ctrl->render();
-
-        $outputPath = $this->resolveControllerOutputPath($config);
+    public function generateController(Config $config) {
+        $ctrl=$this->ctrlBuilder->createController($config);
+        $content=$ctrl->render();
+        $outputPath=$this->resolveControllerOutputPath($config);
         file_put_contents($outputPath, $content);
-
-        if($config->get('add_route')) {
-            $routesFile = file_get_contents(app_path('../routes/').'web.php');
-            $routesLines = explode(PHP_EOL, $routesFile);
-
-            foreach($this->routes as $route) {
-                $find = false;
-                $currentLine = $this->createLine($route, $config->get('table_name'));
-                    
-                foreach($routesLines as $line) {
-                    if(strpos($line, $currentLine) !== false) {
-                        $find = true;
+        if ($config->get('add_route')) {
+            $routesFile=file_get_contents(app_path('../routes/') . 'web.php');
+            $routesLines=explode(PHP_EOL, $routesFile);
+            foreach ($this->routes as $route) {
+                $find=false;
+                $currentLine=$this->createLine($route, $config->get('table_name'));
+                foreach ($routesLines as $line) {
+                    if (strpos($line, $currentLine) !== false) {
+                        $find=true;
                     }
                 }
-                if(!$find) {
-                    $routesFile .= $currentLine .PHP_EOL;
+                if (!$find) {
+                    $routesFile.=$currentLine . PHP_EOL;
                 }
             }
-            $routesFile .= PHP_EOL;
-            
-            file_put_contents(app_path('../routes/').'web.php', $routesFile);
+            $routesFile.=PHP_EOL;
+            file_put_contents(app_path('../routes/') . 'web.php', $routesFile);
         }
         return $ctrl;
     }
 
     /**
      * @param Config $config
+     *
      * @return ClassModel
      * @throws GeneratorException
      */
-    public function generateBulkController(Config $config)
-    {
-        $ctrl   = $this->ctrlBuilder->createBulkController($config);
-        $content = $ctrl->render();
-
-        $outputPath = $this->resolveControllerOutputPath($config);
+    public function generateBulkController(Config $config) {
+        $ctrl=$this->ctrlBuilder->createBulkController($config);
+        $content=$ctrl->render();
+        $outputPath=$this->resolveControllerOutputPath($config);
         file_put_contents($outputPath, $content);
-
-        if($config->get('add_route')) {
-            $routesFile = file_get_contents(app_path('../routes/').'web.php');
-            $routesLines = explode(PHP_EOL, $routesFile);
-
-            foreach($this->routes as $route) {
-                $find = false;
-                $currentLine = $this->createLine($route, $config->get('table_name'));
-                    
-                foreach($routesLines as $line) {
-                    if(strpos($line, $currentLine) !== false) {
-                        $find = true;
+        if ($config->get('add_route')) {
+            $routesFile=file_get_contents(app_path('../routes/') . 'web.php');
+            $routesLines=explode(PHP_EOL, $routesFile);
+            foreach ($this->routes as $route) {
+                $find=false;
+                $currentLine=$this->createLine($route, $config->get('table_name'));
+                foreach ($routesLines as $line) {
+                    if (strpos($line, $currentLine) !== false) {
+                        $find=true;
                     }
                 }
-                if(!$find) {
-                    $routesFile .= $currentLine .PHP_EOL;
+                if (!$find) {
+                    $routesFile.=$currentLine . PHP_EOL;
                 }
             }
-            $routesFile .= PHP_EOL;
-            
-            file_put_contents(app_path('../routes/').'web.php', $routesFile);
+            $routesFile.=PHP_EOL;
+            file_put_contents(app_path('../routes/') . 'web.php', $routesFile);
         }
         return $ctrl;
     }
 
     /**
      * @param Config $config
+     *
      * @return ClassModel
      * @throws GeneratorException
      */
-    public function generateSwaggerController(Config $config)
-    {
+    public function generateSwaggerController(Config $config) {
 
-        $info = $this->swaggerBuilder->createInfoFile($config);
-        file_put_contents(app_path().'/info.php', $info);
-
+        $info=$this->swaggerBuilder->createInfoFile($config);
+        file_put_contents(app_path() . '/info.php', $info);
         return $info;
     }
 
-    
-
-     /**
+    /**
      * @param Config $config
+     *
      * @return ClassModel
      * @throws GeneratorException
      */
-    public function generateRoutes(Config $config)
-    { 
-        $routesFile = file_get_contents(app_path('../routes/').'web.php');
-        $routesLines = explode(PHP_EOL, $routesFile);
-
-        foreach($this->routes as $route) {
-            $find = false;
-            $currentLine = $this->createLine($route, $config->get('table_name'));
-                
-            foreach($routesLines as $line) {
-                if(strpos($line, $currentLine) !== false) {
-                    $find = true;
+    public function generateRoutes(Config $config) {
+        $routesFile=file_get_contents(app_path('../routes/') . 'web.php');
+        $routesLines=explode(PHP_EOL, $routesFile);
+        foreach ($this->routes as $route) {
+            $find=false;
+            $currentLine=$this->createLine($route, $config->get('table_name'));
+            foreach ($routesLines as $line) {
+                if (strpos($line, $currentLine) !== false) {
+                    $find=true;
                 }
             }
-            if(!$find) {
-                $routesFile .= $currentLine .PHP_EOL;
+            if (!$find) {
+                $routesFile.=$currentLine . PHP_EOL;
             }
         }
-        $routesFile .= PHP_EOL;
-        
-        file_put_contents(app_path('../routes/').'web.php', $routesFile);
+        $routesFile.=PHP_EOL;
+        file_put_contents(app_path('../routes/') . 'web.php', $routesFile);
     }
 
+    /**
+     * @param $route
+     * @param $tableName
+     *
+     * @return string
+     */
     protected function createLine($route, $tableName) {
-        return '$router->'. $route[0] .'(\''. sprintf(
-            $route[1], 
-            strtolower(str_replace('_', '-', $tableName)). 's'
-        ). '\', \''. sprintf(
-            $route[2], 
-            $this->generateModelName($tableName)
-        ).'\');';
+        return '$router->' . $route[0] . '(\'' .
+            sprintf($route[1], strtolower(str_replace('_', '-', $tableName)) . 's') . '\', \'' .
+            sprintf($route[2], $this->generateModelName($tableName)) . '\');';
     }
 
     /**
      * @param Config $config
+     *
      * @return string
      */
-    protected function resolveModelOutputPath(Config $config)
-    {
-        $path = $config->get('lumen_model_output_path', app_path());
+    protected function resolveModelOutputPath(Config $config) {
+        $path=$config->get('lumen_model_output_path', app_path());
         if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
@@ -225,11 +207,11 @@ class Generator
 
     /**
      * @param Config $config
+     *
      * @return string
      */
-    protected function resolveControllerOutputPath(Config $config)
-    {
-        $path = $config->get('lumen_ctrl_output_path', app_path());
+    protected function resolveControllerOutputPath(Config $config) {
+        $path=$config->get('lumen_ctrl_output_path', app_path());
         if (!file_exists($path)) {
             mkdir($path, 0755, true);
         }
